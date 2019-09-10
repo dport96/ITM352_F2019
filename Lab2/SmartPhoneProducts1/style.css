@@ -1,0 +1,12 @@
+body {
+    width: 800px; 
+    margin: 0 auto;
+
+}
+.item.img {
+    width: 200px;
+    height: 200px;
+}
+h2 {
+    color: green;
+}
