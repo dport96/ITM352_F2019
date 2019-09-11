@@ -20,10 +20,26 @@ h1,h2 {
     text-align: center;
     color: green;
 }
-
+/*
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
   }
+  */
+
+  img {
+    display: block;
+    border: 1px solid #ddd;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+/* Add a hover effect (blue shadow) */
+img:hover {
+    box-shadow: 0 0 5px 1px black;
+}
