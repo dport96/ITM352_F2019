@@ -3,9 +3,15 @@ body {
     margin: 0 auto;
 
 }
-.item.img {
-    width: 200px;
-    height: 200px;
+
+a:link {color: #FFFFFF; text-decoration: none}
+
+a:visited {color: #808080; text-decoration: none}
+
+a:hover {color: red; text-decoration: none}
+
+h1 {
+    color: red;
 }
 h2 {
     color: green;
