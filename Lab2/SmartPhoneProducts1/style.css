@@ -3,10 +3,19 @@ body {
     margin: 0 auto;
 
 }
-.item.img {
-    width: 200px;
-    height: 200px;
+p{
+    text-align: center;
+    font: "Arial";
 }
-h2 {
+
+h1,h2 {
+    text-align: center;
     color: green;
 }
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
