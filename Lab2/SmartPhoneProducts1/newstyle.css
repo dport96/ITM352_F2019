@@ -1,0 +1,45 @@
+body {
+    width: 800px; 
+    margin: 0 auto;
+
+}
+p.a {
+    text-align: center;
+    font: "Arial";
+    font-size: 20px;
+}
+
+p.b{
+    text-align: center;
+    font: "Times";
+    font-size: 14px;
+    font-style: italic;
+}
+
+h1,h2 {
+    text-align: center;
+    color: green;
+}
+/*
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  */
+
+  img {
+    display: block;
+    border: 1px solid #ddd;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+/* Add a hover effect (blue shadow) */
+img:hover {
+    box-shadow: 0 0 5px 1px black;
+}
