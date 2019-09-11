@@ -12,7 +12,9 @@ a:hover {color: red; text-decoration: none}
 
 h1 {
     color: red;
+    align: center;
 }
 h2 {
     color: green;
+    align: right;
 }
