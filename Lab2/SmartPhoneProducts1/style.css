@@ -4,12 +4,6 @@ body {
 
 }
 
-a:link {color: #FFFFFF; text-decoration: none}
-
-a:visited {color: #808080; text-decoration: none}
-
-a:hover {color: red; text-decoration: none}
-
 h1 {
     color: red;
     align: center;
