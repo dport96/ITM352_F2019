@@ -3,9 +3,17 @@ body {
     margin: 0 auto;
 
 }
-p{
+p.a {
     text-align: center;
     font: "Arial";
+    font-size: 20px;
+}
+
+p.b{
+    text-align: center;
+    font: "Times";
+    font-size: 14px;
+    font-style: italic;
 }
 
 h1,h2 {
