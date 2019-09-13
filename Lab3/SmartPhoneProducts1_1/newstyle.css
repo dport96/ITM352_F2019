@@ -1,14 +1,7 @@
 body {
     width: 800px; 
     margin: 0 auto;
-    background-image: url("images/phone_globe.jpg");
-    background-repeat: no-repeat;
-}
 
-main{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
 }
 
 main {
@@ -19,7 +12,7 @@ justify-content: space-around;
 p.regular {
 text-align: center;
 font: "Times";
-font-size: 20px;
+font-size: 14px;
 font-style: normal;
 }
 
@@ -27,12 +20,11 @@ p.discount {
     text-align: center;
     font: "Arial";
     font-size: 20px;
-    font-style: italic;
-    font-weight: bolder;
+font-style: italics;
     }
 h1,h2 {
     text-align: center;
-    color: darkblue
+    color: green
 }
 
 img {
@@ -44,4 +36,21 @@ img {
     width: 150px;
     padding: 5px;
     
+}
+ 
+.item {
+
+}
+.rotate img
+{
+  animation: rotation .3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
