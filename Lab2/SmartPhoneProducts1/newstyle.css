@@ -4,6 +4,11 @@ body {
 
 }
 
+main {
+    display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+}
 p.regular {
 text-align: center;
 font: "Times";
