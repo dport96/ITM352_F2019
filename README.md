@@ -1,3 +1,3 @@
 # Greetings Earthlings!
-This is my first *repo*.
-[You can find the ITM352 home repo here](https://dport96.github.io/ITM352/)
+This is my very lovely ITM352 *code repo*.
+[You can find the ITM352 course repo here](https://dport96.github.io/ITM352/)
