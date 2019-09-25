@@ -1,0 +1,36 @@
+<table border="3">
+    <tr><th>Line</th><th>Name</th></tr>
+
+    <script>
+        rowNumber = 1;
+        body = "&lt;first_name&gt;";
+        template = `<tr><td>${rowNumber}. </td><td>${body}</td></tr>`;
+        document.write(template);
+
+        rowNumber++;
+        body = "<br /> &lt;first_name&gt;";
+        template = `<tr><td>${rowNumber}. </td><td>${body}</td></tr>`;
+        document.write(template);
+
+        rowNumber++;
+        body = "\\n&lt;first_name&gt;";
+        template = `<tr><td>${rowNumber}. </td><td>${body}</td></tr>`;
+        document.write(template);
+
+        rowNumber++;
+        body = "'\\n&lt;irst_name&gt;'";
+        template = `<tr><td>${rowNumber}. </td><td>${body}</td></tr>`;
+        document.write(template);
+
+        rowNumber++;
+        body = "\"\\n&lt;irst_name&gt;\"";
+        template = `<tr><td>${rowNumber}. </td><td>${body}</td></tr>`;
+        document.write(template);
+
+/* 
+    <tr><td>4.</td><td>'\n&lt;irst_name&gt;'</td></tr>
+    <tr><td>5.</td><td>"\n&lt;first_name&gt;"</td></tr>
+*/
+</script>
+
+</table>
