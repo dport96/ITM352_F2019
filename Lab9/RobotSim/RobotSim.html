@@ -1,0 +1,49 @@
+<head>
+    <script src="Robot.Sim.js"></script>
+</head>
+<h2>JavaScript Robot Simulator (Updated)</h2>
+<p>The application can read commands in following format (case insensitive):
+    <ul>
+        <li>PLACE X,Y,F</li>
+        <li>MOVE</li>
+        <li>LEFT</li>
+        <li>RIGHT</li>
+        <li>REPORT</li>
+    </ul>
+</p>
+<main>
+    <div class="input-area">
+        <label for="command">Enter Command:</label>
+        <input type="text" id="command" onfocusout="inputView.processCommand(this.value)"
+            onkeydown="if (event.keyCode == 13) inputView.processCommand(this.value);" autofocus>
+        <input type="button" value="Start!" onclick="program();">
+    </div>
+    <div class="content">
+        <h4>Current Status:</h4>
+
+        <p id="report"></p>
+        <button id="restart">Restart</button>
+    </div>
+    <canvas id="c" width="551" height="580"></canvas>
+</main>
+<script>
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function program() {
+        // Put the robot commands here
+        // controller.move() will move the robot forward. Returns true if robot moves.
+        // controller.rotate() will rotate the robot clockwise
+        // Use await sleep(200); to slow down the command processing if needed
+
+        controller.move();
+        await sleep(200);
+        controller.move();
+        await sleep(200);
+        controller.rotate();
+        await sleep(200);
+        controller.move();
+    }
+
+</script>
