@@ -1,23 +1,17 @@
-function isNonNegInt(nStringIn)
-{
-    errors = [];                // Initialize an empty errors array.
-    numberIn = Number(nStringIn); // Convert the input string to a number.
+myArray = [1,2,3,"4"];
+myArray.forEach(function(item, index) {
+	console.log(`index ${index} is ${item}`);
+	}
+);
 
-    if (numberIn != nStringIn)  // Test if converted string is equal to the original
-    {                           // If so then it is a number.
-        errors[errors.length] = "Not a number";
-    }
+sum=0;
+myArray.forEach(function(item, index) {
+	sum += item;
+	console.log(`index ${index} is ${item}, running total is ${sum}`);
+	}
+);
 
-    if (numberIn < 0)           // Test if it is negative.
-    {
-        errors[errors.length] = "Not positive";
-    }
-
-    if (Math.floor(numberIn) != numberIn)   // Test if it is an integer
-    {
-        errors[errors.length] = "Not an integer";
-    }
-
-    return errors;  // Return the errors array.
-}
-
+myArray.forEach(function(item, index) {
+	console.log( (typeof item == 'string' && item.length > 0)?true:false ) ;
+	}
+);
