@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order Page</title>
+</head>
+
+<body>
+    <span id='qty_textbox_message'>Enter a quantity</span>
+    <br><label for="qty_textbox">quantity desired</label>
+    <input type="text" id="qty_textbox" onkeyup='getElementById("qty_textbox_message").innerHTML=this.value'>
+
+    <script>
+
+        function myFunction() {
+            var user_input = document.getElementById("qty_textbox").value;
+            document.getElementById("qty_textbox_message").innerHTML = user_input;
+        }
+    </script>
+</body>
+
+</html>
