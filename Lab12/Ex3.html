@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    <form name='quantity_form' action="javascript:displayPurchase();">
+    <form name='quantity_form' action="" onsubmit='displayPurchase();'>
         <label for="quantity_textbox">quantity desired:</label>
         <input type="text" name="quantity_textbox" onkeyup="checkQuantityTextbox();">
         <span id="quantity_textbox_message">Enter a quantity</span>
