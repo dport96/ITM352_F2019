@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>First cut at A1</title>
+</head>
+
+<body>
+    <script>
+        products_array = [
+            {
+                model: "Apple iPhone XS",
+                price: 990.00,
+                image: 'AppleXS.jpg'
+            },
+            {
+                model: "Samsung Galaxy S10",
+                price: 850.00,
+                image: 'GalaxyS10.jpg'
+            },
+            {
+                model: "Google Pixel 3a",
+                price: 350.00,
+                image: 'Pixel3a.jpg'
+            }
+        ];
+
+
+
+    </script>
+    <form action="" method='GET'>
+    <table border="2">
+
+        <script>
+
+            outStr = '';
+            outStr += '<tr><th style="text-align: center;" width="30%">Model</th>'
+                + '<th style="text-align: center;" width="15%">Price</th>'
+                + '<th style="text-align: center;" width="30%">Image</th>'
+                + '<th style="text-align: center;" width="25%">Quantity</th>'
+                + '</tr>';
+
+            for (i = 0; i < products_array.length; i++) {
+                outStr += '<tr><td width="30%">' + products_array[i].model
+                    + '</td><td width="15%">' + products_array[i].price
+                    + '</td><td width="30%"><img src='
+                    + products_array[i].image + '></td>'
+                    + '<td><input type="text" name=text' + i + '</td>' 
+                    + '</tr>';
+            }
+
+            outStr += '</table>';
+        
+            document.write(outStr);
+
+        </script>
+
+<input type='submit' name='Sub' value="Purchase">
+</form>
+</body>
+
+
+</html>
