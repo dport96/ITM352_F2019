@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var myParser = require("body-parser");
 var fs = require('fs'); 
+var products = require('./product_data')
 
 function isNonNegInt(q, returnErrors = false) {
     errors = []; // assume no errors at first
@@ -11,16 +12,7 @@ function isNonNegInt(q, returnErrors = false) {
     return returnErrors ? errors : (errors.length == 0);
 }
 
-app.all('*', function (request, response, next) {
-    console.log(request.method + ' to ' + request.path);
-    next();
-});
-
-app.use(myParser.urlencoded({ extended: true }));
-app.post("/process_form", function (request, response) {
-    let POST = request.body;
-    //response.send(POST);
-
+function process_quantity_form (POST, response) {
     if (typeof POST['quantity_textbox'] != 'undefined') {
         q = POST['quantity_textbox'];
         if (isNonNegInt(q)) {
@@ -30,7 +22,16 @@ app.post("/process_form", function (request, response) {
             response.send(`${q} is not a quantity!`);
         }
     }
+}
 
+app.all('*', function (request, response, next) {
+    console.log(request.method + ' to ' + request.path);
+    next();
+});
+
+app.use(myParser.urlencoded({ extended: true }));
+app.post("/process_form", function (request, response) {
+    process_quantity_form(request.body, response);
 });
 
 app.use(express.static('./public'));
