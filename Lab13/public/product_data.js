@@ -6,7 +6,7 @@ products =
   },
   {  
   "model":"Samsung Galaxy",  
-  "price": 240.00  
+  "price": 250.00  
   }
 ];
 
