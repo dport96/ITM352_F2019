@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Really Simple A1</title>
-    <script src="./product_data.js"></script>
+    <link href="products_style.css" rel="stylesheet">
+    <title>Simple A1</title>
+    <script src="product_data.js"></script>
+    
     <script>
         function isNonNegInt(q, returnErrors = false) {
             errors = []; // assume no errors at first
@@ -17,7 +19,6 @@
         function checkQuantityTextbox(theTextBox) {
             errs = isNonNegInt(theTextBox.value, true);
             document.getElementById(theTextBox.name + '_span').innerHTML = errs.join(", ");
-
         }
     </script>
 </head>
@@ -45,13 +46,14 @@
                         }
                     }
                 }
+
                 // Now respond to errors or redirect to invoice if all is ok
                 if (has_errors) {
                     alert("Please enter only valid quantities!");
                 } else if (total_qty == 0) { // no quantity selections, just give a general alert
                     alert("Please select some quantities!");
                 } else { // all good to go!
-                    window.location = `./invoice.html${document.location.search}`;
+                    window.location = `./process_invoice${document.location.search}`;
                     window.stop;
                 }
             }
@@ -59,11 +61,10 @@
 
     </script>
 
-    <form name='selections' action="" method='GET'>
+    <form name='selections' action="" method='POST'>
         <table border="2">
 
             <script>
-
                 outStr = '';
                 outStr += '<tr><th style="text-align: center;" width="30%">Model</th>'
                     + '<th style="text-align: center;" width="15%">Price</th>'
@@ -87,7 +88,6 @@
         </table>
         <br>
         <input type='submit' name='Sub_btn' value="Purchase">
-
     </form>
 </body>
 

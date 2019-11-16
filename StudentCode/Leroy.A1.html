@@ -1,0 +1,94 @@
+<script src="./Product.data.js"></script>
+<script src="Server.js" type="text/javascript"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leroy Banks Assignment1</title>
+</head>
+
+</html>
+
+<body>
+    <h1>Black Friday Sales For Jordans</h1>
+    <div>
+        <script>
+            for (i = 0; i < products.length; i++) {
+                document.write(` <section class="item">
+                <h2>${products[i].model}</h2>
+                <p>$${products[i].price}</p>
+                <label id="quantity${i}_label" }">Quantity</label>
+                <input type="text" placeholder="0" name="quantity${i}" onkeyup="checkQuantityTextbox(this);">
+                <img src="${products[i].image}">
+                </section>
+                `);
+            }
+        </script>
+    </div>
+
+    <script>
+        window.onload = function () {
+            let params = (new URL(document.location)).searchParams; // get the query string which has the form data
+            // form was submitted so check that quantities are valid then redirect to invoice if ok.
+            if (params.has('purchase_submit')) {
+                has_errors = false; // assume quantities are valid from the start
+                total_qty = 0; // need to check if something was selected so we will look if the total > 0
+                for (i = 0; i < products.length; i++) {
+                    if (params.has(`quantity${i}`)) {
+                        a_qty = params.get(`quantity${i}`);
+                        // make textboxes sticky in case of invalid data
+                        product_selection_form[`quantity${i}`].value = a_qty;
+                        total_qty += a_qty;
+                        if (!isNonNegInt(a_qty)) {
+                            has_errors = true; // oops, invalid quantity
+                            checkQuantityTextbox(product_selection_form[`quantity${i}`]); // show where the error is
+                        }
+                    }
+                }
+                // Now respond to errors or redirect to invoice if all is ok
+                if (has_errors) {
+                    alert("Please enter only valid quantities!");
+                } else if (total_qty == 0) { // no quantity selections, just give a general alert
+                    alert("Please select some quantities!");
+                } else { // all good to go!
+                    window.location = `./invoice.html${document.location.search}`;
+                    window.stop;
+                }
+            }
+        }
+        function isNonNegInt(q, sendArrayBack = false) {
+            errors = []; // assume no errors at first
+            if (Number(q) != q) errors.push('Not a number!'); // Check if string is a number value
+            if (q < 0) errors.push('Negative value!'); // Check if it is non-negative
+            if (parseInt(q) != q) errors.push('Not an integer!'); // Check that it is an integer
+            if (sendArrayBack) {
+                return (errors);
+            } else {
+                return (errors.length == 0);
+            }
+        }
+        function checkQuantity() // setting the function for the quantity textbox
+        {
+            errs = isNonNegInt(quantity_textbox.value, true);
+            qty_textbox_message.innerHTML = errs.join(",");
+            //quantity_textbox_message.innerHTML = quantity_textbox.value;
+        }
+        function displayPurchase() {
+            // function to display product quantity if it is a non-negative integer 
+            textboxValue = quantity_textbox.value;
+            if (isNonNegInt(textboxValue)) {
+                document.write(`Thank you for purchasing ${textboxValue} things`);
+            }
+        }
+    </script>
+    <form name="quantity_form" action="http://localhost:8080/process_form" method="POST">
+    <input type="submit" value="Purchase" onlclick="displayPurchase();">
+</form>
+</body>
+</Table>
+
+</html>
