@@ -7,6 +7,11 @@ var app = express();
 
 app.use(myParser.urlencoded({ extended: true }));
 
+app.post("/Asst1.html", function (request, response, next) {
+    console.log('Processing Asst1');
+    next();
+ });
+
 app.post("/process_invoice", function (request, response, next) {
     let POST = request.body;
     if(typeof POST['Sub_btn'] == 'undefined') {
@@ -76,4 +81,4 @@ app.all('*', function (request, response, next) {
 
 app.use(express.static('./static'));
 
-var listener = app.listen(8080, () => { console.log('Server started listening on port ' + listener.address().port) });
+var listener = app.listen(8080, () => { console.log('Server listening on port ' + listener.address().port) });
