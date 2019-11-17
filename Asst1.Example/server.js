@@ -7,19 +7,22 @@ var app = express();
 
 app.use(myParser.urlencoded({ extended: true }));
 
+/*
 app.post("/Asst1.html", function (request, response, next) {
     console.log('Processing Asst1');
     next();
  });
-
-app.post("/process_invoice", function (request, response, next) {
+*/
+// Asst.html has a form with action="" method=POST so we route that here to display an invoice
+app.post("/Asst1.html", function (request, response, next) {
     let POST = request.body;
     if(typeof POST['Sub_btn'] == 'undefined') {
         console.log('No purchase form data');
-        next();
+        next(); // this will pass the request to the next handler to respond
     } else 
     {
         console.log("No sub button");
+        // so now what do  you do in response to no sub button? Current;y it just falls through and creates and empty invoice.
     }
 
     console.log(Date.now() + ': Purchase made from ip ' + request.ip + ' data: ' + JSON.stringify(POST));
@@ -27,7 +30,7 @@ app.post("/process_invoice", function (request, response, next) {
     var contents = fs.readFileSync('./views/invoice.template', 'utf8');
     response.send(eval('`' + contents + '`')); // render template string
 
-    function display_invoice_table_rows() {
+    function display_invoice_table_rows(POST) { // need to pass in POST data since it's not global. You could use request.body since you are inside the the function where request is defined.
         subtotal = 0;
         str = '';
         for (i = 0; i < products.length; i++) {
