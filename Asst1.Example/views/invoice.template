@@ -20,7 +20,7 @@
         <th style="text-align: center;" width="13%">Price</th>
         <th style="text-align: center;" width="54%">Extended price</th>
       </tr>
-        ${display_invoice_table_rows()}
+        ${display_invoice_table_rows(POST)}
       <tr>
         <td colspan="4" width="100%">&nbsp;</td>
       </tr>
