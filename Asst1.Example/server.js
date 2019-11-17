@@ -7,7 +7,7 @@ var app = express();
 
 app.use(myParser.urlencoded({ extended: true }));
 
-app.get("/process_invoice", function (request, response, next) {
+app.post("/process_invoice", function (request, response, next) {
     let POST = request.body;
     if(typeof POST['Sub_btn'] == 'undefined') {
         console.log('No purchase form data');
